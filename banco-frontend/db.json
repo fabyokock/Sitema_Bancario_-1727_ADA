@@ -1,5 +1,36 @@
 {
-  "clientes": [],
+  "clientes": [
+    {
+      "nome": "Pedro Augusto",
+      "cpf": "12345678910",
+      "email": "pedro@email.com",
+      "id": 1
+    },
+    {
+      "nome": "Josefa Barbosa\t",
+      "cpf": "98765465400\t",
+      "email": "josefa@email.com",
+      "id": 2
+    },
+    {
+      "nome": "João Silva Campos Barbosa",
+      "cpf": "98765465400",
+      "email": "joaosilva@email.com",
+      "id": 3
+    },
+    {
+      "nome": "a",
+      "cpf": "aaaaaaaaaaa",
+      "email": "a@a",
+      "id": 4
+    },
+    {
+      "nome": "11111",
+      "cpf": "yyyyy",
+      "email": "@",
+      "id": 5
+    }
+  ],
   "contas": [],
   "transacoes": []
 }

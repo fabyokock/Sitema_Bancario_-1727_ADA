@@ -1,18 +1,13 @@
-// Espera o HTML ser carregado completamente.
 document.addEventListener("DOMContentLoaded", iniciar);
 
-// Armazena o id do cliente que está sendo editado.
-// null significa que estamos criando um novo cliente.
 let clienteEmEdicao = null;
 
-// Referências dos elementos mais utilizados.
 const formCliente = document.getElementById("form-cliente");
 
 const areaMensagens = document.getElementById("area-mensagens");
 
 const erroCliente = document.getElementById("erro-cliente");
 
-// Carrega os clientes cadastrados e desenha a tabela.
 async function iniciar() {
   const clientes = await buscarClientes();
 
@@ -43,7 +38,6 @@ filtroClienteNome.addEventListener("input", async () => {
 formCliente.addEventListener("submit", async (evento) => {
   evento.preventDefault();
 
-  // Limpa mensagens anteriores.
   areaMensagens.textContent = "";
   erroCliente.textContent = "";
 
@@ -63,25 +57,18 @@ formCliente.addEventListener("submit", async (evento) => {
     return;
   }
 
-  // Se existe cliente em edição,
-  // atualiza.
   if (clienteEmEdicao !== null) {
     await atualizarCliente(clienteEmEdicao, cliente);
 
     areaMensagens.textContent = "Cliente atualizado com sucesso.";
-  }
-
-  // Caso contrário cria.
-  else {
+  } else {
     await criarCliente(cliente);
 
     areaMensagens.textContent = "Cliente criado com sucesso.";
   }
 
-  // Limpa formulário.
   formCliente.reset();
 
-  // Encerra modo de edição.
   clienteEmEdicao = null;
 
   // Atualiza tabela.
@@ -146,9 +133,6 @@ corpoTabelaClientes.addEventListener("click", async (evento) => {
 
     erroCliente.textContent = "";
 
-    // Se o cliente que estava sendo
-    // editado for deletado,
-    // cancela a edição.
     if (clienteEmEdicao === id) {
       clienteEmEdicao = null;
 

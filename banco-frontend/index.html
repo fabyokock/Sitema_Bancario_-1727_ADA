@@ -5,23 +5,8 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Sistema Bancário</title>
+    <title>Sistema Bancário #1727</title>
 
-    <!--
-      A ordem dos scripts é importante.
-
-      api.js:
-      disponibiliza as funções de comunicação com a API.
-
-      validacao.js:
-      disponibiliza a função validarCliente.
-
-      ui.js:
-      disponibiliza a renderização da tabela.
-
-      main.js:
-      utiliza as funções dos três arquivos anteriores.
-    -->
     <script src="js/api.js" defer></script>
     <script src="js/validacao.js" defer></script>
     <script src="js/ui.js" defer></script>
@@ -35,10 +20,6 @@
 
     <!--
       Área utilizada para mensagens gerais de sucesso ou erro.
-
-      Exemplos:
-      "Cliente criado com sucesso."
-      "Não foi possível carregar os clientes."
     -->
     <div id="area-mensagens" role="alert"></div>
 
@@ -49,15 +30,6 @@
     <section>
       <h2>Clientes</h2>
 
-      <!--
-        O mesmo formulário será utilizado para criar
-        e editar clientes.
-
-        O controle da edição não será mais feito por
-        um input hidden.
-
-        O main.js utilizará a variável clienteEmEdicao.
-      -->
       <form id="form-cliente" novalidate>
         <label for="cliente-nome">Nome</label>
 
@@ -81,8 +53,7 @@
       </form>
 
       <!--
-        Campo já preparado para a futura implementação
-        do bônus de filtro por nome.
+      FILTRO por nome
       -->
       <label for="filtro-cliente-nome"> Buscar por nome </label>
 
@@ -100,8 +71,7 @@
 
         <tbody id="tabela-clientes-corpo">
           <!--
-            As linhas dos clientes serão criadas
-            dinamicamente pelo ui.js.
+            As linhas dos clientes são criadas pelo ui.js.
           -->
         </tbody>
       </table>
@@ -115,8 +85,7 @@
       <h2>Contas</h2>
 
       <!--
-        Estrutura preparada para a próxima fase do projeto.
-        A lógica das contas ainda será implementada.
+        Estrutura preparada para o MÓDULO CONTAS
       -->
       <form id="form-conta">
         <label for="conta-cliente">Cliente</label>
@@ -154,8 +123,7 @@
 
         <tbody id="tabela-contas-corpo">
           <!--
-            As linhas das contas serão criadas
-            dinamicamente quando o módulo for implementado.
+            As linhas dos clientes/Contas são criadas pelo ui.js.
           -->
         </tbody>
       </table>
@@ -169,8 +137,7 @@
       <h2>Transações</h2>
 
       <!--
-        Estrutura preparada para depósitos e saques.
-        A lógica será implementada em uma próxima fase.
+      Estrutura preparada para o MÓDULO TRANSAÇÕES
       -->
       <form id="form-transacao">
         <label for="transacao-conta">Conta</label>
@@ -216,8 +183,7 @@
 
         <tbody id="tabela-transacoes-corpo">
           <!--
-            As transações serão criadas dinamicamente
-            quando o módulo for implementado.
+            As linhas relacionadas às trasações são criadas pelo ui.js.
           -->
         </tbody>
       </table>

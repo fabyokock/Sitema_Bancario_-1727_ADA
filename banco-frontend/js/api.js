@@ -1,13 +1,10 @@
 // Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
 
-// npx json-server@0.17.4 --watch db.json --port 3000
+// npx json-server@0.17.4 --watch db.json --port 3001
 
 // Endereço-base do json-server.
-//
-// O json-server lê e atualiza o arquivo db.json.
-// A rota /clientes representa o array "clientes"
-// existente dentro desse arquivo.
-const API_URL = "http://localhost:3000";
+
+const API_URL = "http://localhost:3001";
 
 // Busca todos os clientes cadastrados.
 //
