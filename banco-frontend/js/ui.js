@@ -1,4 +1,3 @@
-// Referência ao corpo da tabela de clientes.
 const corpoTabelaClientes = document.getElementById("tabela-clientes-corpo");
 
 function renderizarClientes(clientes) {
