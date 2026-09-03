@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Gestão de Clientes</title>
+
+    <script src="js/api.js" defer></script>
+    <script src="js/validacao.js" defer></script>
+    <script src="js/ui.js" defer></script>
+    <script src="js/main.js" defer></script>
+    <script src="js/auth.js"></script>
+    <link href="style.css" rel="stylesheet" />
+
+    <script>
+      protegerPagina();
+      carregarBoasVindas();
+
+    </script>
+  </head>
+
+  <body>
+    <div class="wrap">
+      <!-- Sidebar -->
+
+      <div id="sidebar">
+        <div class="sidebar-header">
+          <h5 class="sidebar-title">Sistema</h5>
+        </div>
+
+        <div class="sidebar-body">
+          <button
+            type="button"
+            class="btn"
+            onclick="location.href = 'clientes.html'"
+          >
+            Gestão de Clientes
+          </button>
+
+          <button
+            type="button"
+            class="btn"
+            onclick="location.href = 'contas.html'"
+          >
+            Gestão de Contas
+          </button>
+
+          <button
+            type="button"
+            class="btn"
+            onclick="location.href = 'transacoes.html'"
+          >
+            Transações
+          </button>
+
+          <button id="logout">Sair</button>
+        </div>
+      </div>
+
+      <section id="content">
+        <!-- Main -->
+
+        <main id="main">
+          <div class="navbar">
+            <div>
+              <p id="usuarioLogado">Painel de Clientes</p>
+
+              <p id="boasVindas">Faça login para acessar o sistema</p>
+            </div>
+   <!-- Adicione o botão no topo do <body> (ex: antes do <h1>) -->
+    <button id="btn-tema" type="button">Alternar Tema</button>
+
+
+
+            <form id="loginForm">
+              <input type="text" id="usuario" placeholder="Usuário" required />
+
+              <input type="password" id="senha" placeholder="Senha" required />
+
+              <button type="button" onclick="entrar(event)">Entrar</button>
+
+              <p id="mensagem"></p>
+            </form>
+          </div>
+        </main>
+
+        <article id="Box">
+          <h2>Sistema Bancário #1727</h2>
+
+          <p>Bem-vindo ao sistema de gerenciamento bancário.</p>
+
+          
+
+          
+          </p>
+        </article>
+      </section>
+    </div>
+  </body>
+</html>
+
+clientes.html
+
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Sistema Bancário #1727</title>
+
+    <script src="js/api.js" defer></script>
+    <script src="js/validacao.js" defer></script>
+    <script src="js/ui.js" defer></script>
+    <script src="js/main.js" defer></script>
+    <script src="js/auth.js"></script>
+    <link href="style.css" rel="stylesheet" />
+
+    <script>
+      protegerPagina();
+      carregarBoasVindas();
+    </script>
+  </head>
+  <body>
+    <div class="wrap">
+      <!-- Sidebar -->
+      <div id="sidebar">
+        <div class="sidebar-header">
+          <h5 class="sidebar-title">Sistema</h5>
+        </div>
+
+        <div class="sidebar-body">
+          <button
+            type="button"
+            class="btn"
+            onclick="location.href = 'clientes.html'"
+          >
+            Gestão de Clientes
+          </button>
+
+          <button
+            type="button"
+            class="btn"
+            onclick="location.href = 'contas.html'"
+          >
+            Gestão de Contas
+          </button>
+
+          <button
+            type="button"
+            class="btn"
+            onclick="location.href = 'transacoes.html'"
+          >
+            Transações
+          </button>
+
+          <button
+            type="button"
+            class="btn"
+            onclick="location.href = 'index.html'"
+          >
+            Home
+          </button>
+
+          <button id="logout">Sair</button>
+        </div>
+      </div>
+
+      <div id="content">
+        <!-- Main -->
+        <main id="main">
+          <!-- Navbar -->
+          <div class="navbar">
+            <p id="boasVindas"></p>
+          </div>
+        </main>
+
+        <!--
+          Área utilizada para mensagens gerais de sucesso ou erro.
+        -->
+        <div id="area-mensagens" role="alert"></div>
+
+        <!-- ========================================= -->
+        <!-- CLIENTES                                  -->
+        <!-- ========================================= -->
+
+        <section id="box1">
+          <h2>Clientes</h2>
+
+          <form id="form-cliente" novalidate>
+            <label for="cliente-nome">Nome</label>
+
+            <input type="text" id="cliente-nome" required />
+
+            <label for="cliente-cpf">CPF</label>
+
+            <input type="text" id="cliente-cpf" maxlength="11" required />
+
+            <label for="cliente-email">Email</label>
+
+            <input type="email" id="cliente-email" required />
+
+            <p id="erro-cliente" role="alert"></p>
+
+            <button type="submit">Salvar cliente</button>
+
+            <button type="button" id="btn-cancelar">Cancelar</button>
+          </form>
+
+          <p id="quantidade-clientes"></p>
+          <!-- --
+      FILTRO por nome
+      -->
+          <label for="filtro-cliente-nome"> Buscar por nome </label>
+
+          <input type="search" id="filtro-cliente-nome" />
+          <table>
+            <thead>
+              <tr>
+                <th>Nome</th>
+                <th>CPF</th>
+                <th>Email</th>
+                <th>Ações</th>
+              </tr>
+            </thead>
+            <tbody id="tabela-clientes-corpo"></tbody>
+          </table>
+        </section>
+      </div>
+    </div>
+  </body>
+</html>

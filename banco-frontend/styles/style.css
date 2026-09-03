@@ -1,0 +1,23 @@
+/* Tema Claro (Padrão) */
+body {
+  background-color: #ffffff;
+  color: #1a1a1a;
+  transition:
+    background-color 0.3s,
+    color 0.3s;
+}
+
+/* Tema Escuro */
+body.dark {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+/* Ajuste opcional para tabelas e inputs no tema escuro */
+body.dark table,
+body.dark input,
+body.dark select {
+  background-color: #1e1e1e;
+  color: #ffffff;
+  border-color: #444444;
+}

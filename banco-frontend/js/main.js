@@ -144,3 +144,26 @@ corpoTabelaClientes.addEventListener("click", async (evento) => {
     renderizarClientes(clientesAtualizados);
   }
 });
+
+// ---------------------------------
+//          ALTERNAR TEMA
+// ---------------------------------
+
+// Captura a referência do botão no HTML
+const btnTema = document.getElementById("btn-tema");
+
+// 1. Aplica o tema salvo assim que o script carrega (evita "piscada" ao abrir a página)
+const temaSalvo = localStorage.getItem("tema");
+if (temaSalvo === "dark") {
+  document.body.classList.add("dark");
+}
+
+// 2. Escuta o clique no botão para alternar e salvar o tema
+btnTema.addEventListener("click", () => {
+  // Alterna a classe 'dark' no <body>
+  document.body.classList.toggle("dark");
+
+  // Verifica se o tema escuro está ativo e grava a preferência no localStorage
+  const temaAtual = document.body.classList.contains("dark") ? "dark" : "light";
+  localStorage.setItem("tema", temaAtual);
+});
